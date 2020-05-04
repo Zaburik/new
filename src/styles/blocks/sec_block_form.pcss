@@ -1,0 +1,183 @@
+/*COMMENT AND FORM */
+
+
+
+/* Код большой секции в файле comment_block */
+
+
+
+/* FORM */
+
+.form-sec{
+	grid-column:1/span 7;
+}
+
+.form-title{
+	margin-bottom: 80px;
+}
+
+
+.form__block{
+	display:flex;
+	width: 100%;
+	justify-content:space-between;
+}
+
+.form__box{
+	width: 45%;
+	position: relative;	
+	margin-bottom: 40px;
+
+	&::before{
+		content:'';
+		display:block;
+		position: absolute;
+		width: 30px; height: 30px;
+		top: 50%; left: 0px;
+
+	}
+
+
+	&::after{
+		content:'';
+		transition:0.5s;
+		display:block;
+		width: 100%; height: 2px;
+		background-color:#EB8C00;
+		position: absolute;
+		left: 0; bottom:0;
+		transform:scaleX(0);
+	}
+
+
+	&:first-child::before{
+		background: svg-load('user.svg', fill=#7D7C79, width=100%, height=100%);
+	}
+	&:last-child::before{
+		background: svg-load('envelope.svg', fill=#7D7C79, width=100%, height=100%);
+	}
+
+
+}
+
+
+
+.form__inp{
+	display:block;
+	width: 100%;
+	padding: 0px 0 25px 50px;
+	font-size:20px;
+	background-color:transparent;
+	border-color:transparent;
+	border-bottom:2px solid #7D7C79;
+	color:#fff; 
+	outline:none;
+	transition:0.7s;
+}
+
+
+
+.form__comment{
+	position: relative;
+	margin-bottom: 60px;
+	display:block;
+	transition:0.4s;
+	&::before{
+		content:'';
+		display:block;
+		position: absolute;
+		width: 30px; height: 30px;
+		top: 50%; left: 0px;
+	}
+
+
+	&::before{
+		background: svg-load('message.svg', fill=#7D7C79, width=100%, height=100%);
+	}
+
+
+
+	&::after{
+		content:'';
+		transition:0.5s;
+		display:block;
+		width: 100%; height: 2px;
+		background-color:#EB8C00;
+		position: absolute;
+		left: 0; bottom:0;
+		transform:scaleX(0);
+	}
+}
+
+
+
+
+.form__message{
+	display:block;
+	width: 100%;
+	padding: 0px 0 5px 50px;
+	font-size:20px;
+	background-color:transparent;
+	border-color:transparent;
+	border-bottom:2px solid #7D7C79;
+	color:#fff; 
+	outline:none;
+	resize: none;
+}
+
+
+
+.form__text{
+	padding-left: 50px;
+	margin-bottom: 30px;
+}
+
+
+
+.btn{
+	padding: 25px 100px;
+	background: linear-gradient(143deg, rgba(212,114,3,1) 0%, rgba(242,148,0,1) 100%);
+	color:white;
+	font-size:20px;
+	text-transform:uppercase;
+	font-weight:bold;
+	outline:none;
+	border-radius:5px;
+	letter-spacing: 2px;
+}
+
+
+
+
+
+
+
+
+/* ACTIVE_CLASS */
+
+
+
+
+.form__comment_active{
+	&::after{
+		transform:scaleX(1);
+	}
+	&::before{
+		transition:0.5s;
+		background: svg-load('message.svg', fill=#EB8C00, width=100%, height=100%);
+	}
+}
+
+
+.form__box_active{
+	&::after{
+		transform:scaleX(1);
+	}	
+	&:first-child::before{
+		background: svg-load('user.svg', fill=#EB8C00, width=100%, height=100%);
+	}
+	&:last-child::before{
+		background: svg-load('envelope.svg', fill=#EB8C00, width=100%, height=100%);
+	}
+
+}

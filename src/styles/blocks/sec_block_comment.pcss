@@ -1,0 +1,165 @@
+/*COMMENT AND FORM */
+
+
+
+
+
+
+.comment_and_form{
+	height: 1300px;
+	background: url(~images/content/comment_and_form.jpg) no-repeat center;
+	background-size: cover;
+	display:flex;
+	flex-direction:column;
+	justify-content:center;
+	position: relative;
+
+
+	&:before{
+		position: absolute;
+		content:'';
+		width: 35%;
+		height: 100%;
+		background-color: rgba(25,26,27,0.7);
+		right: 0;top: -200px;
+		background: url(~images/content/листва.png) no-repeat center;
+		background-size: cover;
+	}
+}
+
+
+
+
+
+
+
+.comment_and_form-cont{
+	display:grid;
+	grid-template-columns:repeat(12, 1fr);
+}
+
+
+.comment{
+	grid-column:1/span 8;
+	overflow:hidden;
+	margin-bottom: 180px;
+}
+
+.comment__head{
+	display:flex;
+}
+
+
+.title{
+	font-size: 36px;
+	line-height: 48px;
+	font-weight:bold;
+	color:white;
+}
+
+.comment__controlls{
+	display:flex;
+	width: 125px;
+	justify-content:space-between;
+	margin-left: 100px;
+}
+
+
+.comment__controlls *{
+	display:block;
+	width: 50px; height: 50px;	
+	position: relative;
+	border:1px solid white;
+	border-radius:50%;
+	transition:0.3s;
+
+
+	&::before{
+		content:'';
+		transition:0.5s;
+		position: absolute;
+		display:block;
+		width: 20px; height: 20px;	
+		background: svg-load('arrow.svg', fill=#fff, width=100%, height=100%);
+		top: 50%;left: 50%;
+		transform:translate(-50%,-50%);
+	}
+	cursor:pointer;
+
+	&:hover{
+		border-color: $orange;
+
+		&::before{
+			background: svg-load('arrow.svg', fill=$orange, width=100%, height=100%);
+		}
+	}
+}
+
+
+.comment__controlls_left{
+	transform:rotate(180deg);
+}
+
+
+/* ANIMATION */
+.comment__wrap{
+	width: 100%;
+	display:flex;
+	transition:1s;
+	transform: translateX(-00%);
+}
+
+
+
+.comment__list{
+	display:flex;
+	width: 100%;
+	justify-content:space-between;
+	flex-shrink:0;
+}
+
+
+.comment-block{
+	padding: 5px;
+	max-width: 48%;
+	margin-left: 100px;
+	position: relative;
+
+	&::before{
+		content:'';
+		position: absolute;
+		width: 80px;height: 80px;
+		top: 0;left: -100px;
+		background: svg-load('quote.svg', fill=rgba(53,56,57,0.5), width=100%, height=100%);
+	}
+}
+
+.comment__list .comment-block:last-child{
+	margin-left: 120px;
+}
+
+
+.comment__text{
+	margin-bottom: 35px;
+}
+
+.comment-box{
+	display:flex;
+	align-items:center;
+}
+
+.comment__user{
+	width: 75px;
+	height: 75px;
+	pointer-events: none;
+	border-radius:50%;
+	overflow: hidden;
+	margin-right: 30px;
+}
+
+
+.comment-name{
+	font-weight: bold;
+	color:white;
+}
+

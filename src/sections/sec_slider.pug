@@ -1,0 +1,43 @@
+section.slider-sec
+  .container
+    h2.title.title_black Мои работы
+    .slider__wrap 
+      .slider__cont
+        .slider__cont_box
+          ul.slider__list
+            li.slider__slide
+              +image('content/5.jpg', 'slides slide_1')
+            li.slider__slide
+              +image('content/2.jpg', 'slides slide_2')
+            li.slider__slide
+              +image('content/1.jpg', 'slides slide_3')
+            li.slider__slide
+              +image('content/1.jpg', 'slides slide_3')    
+
+        .slider__btns
+          span.slider__btns-box.next
+            +icon('arrow', 'slider__arrow slider__arrow_right')  
+          span.slider__btns-box.prev
+            +icon('arrow', 'slider__arrow slider__arrow_left')      
+        
+        .slider__pag-wrap
+          ul.slider__pag
+            li.slider__pag-point.slider__pag-point_active
+              +image('content/5.jpg', 'slides slide_1')
+            li.slider__pag-point
+              +image('content/2.jpg', 'slides slide_2')
+            li.slider__pag-point
+              +image('content/1.jpg', 'slides slide_3')
+            li.slider__pag-point
+              +image('content/1.jpg', 'slides slide_3')
+               
+      .slider__info
+        .slider__info-el.programms
+          span.code HTML
+          span.code CSS
+          span.code JavaScript
+        .slider__info-el.title.slider__title Сайт школы образования  
+        .slider__info-el.text.slider__text  Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
+        .slider__info-el
+          a(href="" target="blank").slider__info-el.slider__src Посмотреть сайт
+            +icon('link', 'site-link') 
